@@ -14,12 +14,11 @@ public class LargeFibonacci {
         }
         long prev = 1;
         long current = 2;
-        long last = current % 10;
         for (int i = 2; i < n-1; i++) {
             long temp = prev;
             prev = current;
             current = temp + current;
         }
-        return current;
+        return current % 10;
     }
 }
