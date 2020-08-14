@@ -8,7 +8,7 @@ public class LargeFibonacci {
 
     }
 
-    public static long lastDigitFibonacci(int n) {
+/*    public static long lastDigitFibonacci(int n) {
         if (n <= 1) {
             return n;
         }
@@ -20,5 +20,20 @@ public class LargeFibonacci {
             current = temp + current;
         }
         return current % 10;
+    } */
+
+    public static int lastDigitFibonacci(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        int newLast = 1;
+        int currentNum = 1;
+        for (int i = 2; i < n; i++) {
+            int tempNum = newLast;
+            newLast = currentNum;
+            currentNum = (currentNum + tempNum) % 10;
+        }
+        return currentNum;
     }
+
 }
